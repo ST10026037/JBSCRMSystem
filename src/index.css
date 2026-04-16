@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  @apply bg-brand-surface text-black;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+@layer components {
+  /* Shared data tables — use with <table className="crm-table ..."> */
+  .crm-table thead {
+    @apply border-b border-black/10 bg-gradient-to-r from-brand-orange/[0.1] to-brand-orange/[0.04];
+  }
+  .crm-table thead th {
+    @apply px-4 py-3.5 text-left text-xs font-semibold uppercase tracking-wider text-black/55;
+  }
+  .crm-table tbody tr {
+    @apply border-b border-black/[0.06] transition-colors last:border-b-0;
+  }
+  .crm-table tbody tr:hover {
+    @apply bg-brand-orange/[0.035];
+  }
+  .crm-table tbody td {
+    @apply px-4 py-3.5 align-middle;
+  }
+}
